@@ -339,6 +339,18 @@ interface AppQueries{
  * 
  * 
  * 
+ *
+ * Changes required on your machine to run this example--
+ * 	1. change database parameters 
+ * 			--DatabaseUtil class
+ * 				url
+ * 				username
+ * 				password
+ * 				driverclass
+ * 2. Add database jar into project classpath
+ * 3. create database table as mentioned in appqueries interface.
+ * 					
+ * 
  * 
 
 	 */
