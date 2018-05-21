@@ -12,7 +12,7 @@ public class CustomizedSerialization {
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		Person p1 = new Person("A","PUne", 1121);
-		File file = new File("C:\\Users\\Yogesh\\Desktop\\Serialization\\cust.txt");
+		File file = new File("C:\\Users\\Abc\\Desktop\\Serialization\\cust.txt");
 
 		System.out.println("Pre-serilization --" +p1);
 		

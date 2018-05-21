@@ -22,8 +22,8 @@ public class Emp implements Serializable {
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		Emp e1 = new Emp(10,"Abcd",12121);
 		Emp e2 = new Emp(12,"AAAA",11111);
-		File filea = new File("C:\\Users\\Yogesh\\Desktop\\Serialization\\sera.txt");
-		File fileb = new File("C:\\Users\\Yogesh\\Desktop\\Serialization\\serb.txt");
+		File filea = new File("C:\\Users\\abc\\Desktop\\Serialization\\sera.txt");
+		File fileb = new File("C:\\Users\\abc\\Desktop\\Serialization\\serb.txt");
 		/*FileOutputStream fos = new FileOutputStream(file);
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		oos.writeObject(e1);

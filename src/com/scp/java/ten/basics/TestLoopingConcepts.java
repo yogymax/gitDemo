@@ -1,20 +1,47 @@
 package com.scp.java.ten.basics;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class TestLoopingConcepts {
 
 	/*public void m1(int i){
 		System.out.println("int");
 	}*/
 	
-	public void m1(byte i){
+	
+	
+	
+	public static void main(String []a) throws Exception{
 		System.out.println("byte");
+		
+		try(
+				FileReader freader = new FileReader("C:\\Users\\abc\\Desktop\\Patterns\\demo.txt");
+				BufferedReader reader = new BufferedReader(freader);){
+			
+			if(freader.read()==-1){
+				throw new Exception("File has no contents..");
+				
+			}else{
+				String line =null;
+				while((line=reader.readLine())!=null){
+					System.out.println(line);
+				}
+			
+			}		
+			
+		}
+		
 	}
 	
 	public void method3(){
 	}
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		TestLoopingConcepts t = new TestLoopingConcepts();
-	}
+	}*/
 	
 }
 
