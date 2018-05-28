@@ -138,7 +138,7 @@ public class CollectionBasics3 {
 			System.out.println(litr.next());
 		}	
 		
-		System.out.println("using consumer functional interface");
+		/*System.out.println("using consumer functional interface");
 		numbers.forEach(new Consumer<Integer>() {
 			@Override
 			public void accept(Integer t) {
@@ -152,7 +152,7 @@ public class CollectionBasics3 {
 		
 		System.out.println("using lambda expression");
 		numbers.forEach(System.out::println);
-		
+		*/
 		
 		
 		
