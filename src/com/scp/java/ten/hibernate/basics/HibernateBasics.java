@@ -1,7 +1,6 @@
 package com.scp.java.ten.hibernate.basics;
 
 public class HibernateBasics {
-
 }
 
 
@@ -155,8 +154,8 @@ public class HibernateBasics {
  
  
  
- 
- */http://mrbool.com/understanding-hibernate-caching/28721
+ http://mrbool.com/understanding-hibernate-caching/28721
+ */
 
 
 

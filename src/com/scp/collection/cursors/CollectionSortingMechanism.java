@@ -10,6 +10,7 @@ public class CollectionSortingMechanism {
 	public static void main(String[] args) {
 		
 		/**
+Ascii values		 * 
 48 - 0
 57-  9
 	95
