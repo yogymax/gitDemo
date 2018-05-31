@@ -129,7 +129,36 @@ public class HibernateBasics {
  * 
  * 
  * 
- */
+ 
+ 
+ 
+ Imp links
+ 
+ https://www.javacodegeeks.com/2014/06/pitfalls-of-the-hibernate-second-level-query-caches.html
+ http://javabycode.com/java-frameworks/hibernate-4-tutorial/difference-between-save-and-persist-method-in-hibernate.html
+ https://stackoverflow.com/questions/19516451/hibernate-first-level-cache-vs-query-cache
+ https://stackoverflow.com/questions/3715301/which-classes-are-cached-in-second-level-cache-in-hibernate
+ http://mrbool.com/understanding-hibernate-caching/28721
+ 
+ https://anirbanchowdhury.wordpress.com/tag/non-strict-read-write/
+ 
+ https://javapapers.com/java/java-concurrent-collections/
+ https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ */http://mrbool.com/understanding-hibernate-caching/28721
+
+
 
 
 
