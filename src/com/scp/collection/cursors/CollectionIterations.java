@@ -19,6 +19,32 @@ import java.util.Vector;
  * 
  * Code explanation line by line + hashcode and equals method impltn 
  * 
+ *
+ * hashcode
+ * 		take 31 one as prime
+ * 		take int result as 1
+ * 		result = result* prime + intwalifield
+ *      result = result*prime + Stirng asel tr tyacha hashcode or null asel tr 0
+ *      return result
+ *      
+ *  e1.equals(e2)
+ *  
+ *    
+ *    e1==e2  T
+ *    e2==null F
+ *   ! e1.class e2 class F
+ *   ! id F
+ *   ! nam F
+ *   
+ *   return t
+ *   
+ *   
+ *    
+ *      
+ *      
+ *      
+ *      
+ *  
  * 
  *
  */
@@ -31,6 +57,12 @@ public class CollectionIterations {
 		System.out.println(mapOfEmps);
 		String value = "Person2";
 		Emp emp1= retriveKeyBasedOnValue(value,mapOfEmps);
+		Emp emp2= retriveKeyBasedOnValue(value,mapOfEmps);
+		emp1.equals(emp2);
+		
+		
+		
+		
 		
 		System.out.println(value +" value has a key -- " +emp1);
 
@@ -204,12 +236,19 @@ class Emp{
 		result = prime * result + ((empName == null) ? 0 : empName.hashCode());
 		return result;
 	}
+	
+	//e1=value e2=value
+	
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
+		
 		if (obj == null)
 			return false;
+		
+		if (this == obj)
+			return true;
+				
+		
 		if (getClass() != obj.getClass())
 			return false;
 		Emp other = (Emp) obj;
@@ -222,6 +261,8 @@ class Emp{
 			return false;
 		return true;
 	}
+	
+	
 	
 	
 	
