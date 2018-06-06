@@ -46,6 +46,31 @@ public class TestEmployeeCrud {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		
+		Employee e1 = new Employee(10,"A1");//900
+		e1 = new Employee(20,"b"); // can change ref or value
+		
+		final Employee e2 = new Employee(10,"A1");//1000
+		//e2=e1; // can change values but not ref
+		
+		
+		//should not change value or ref -- immutable/**
+		
+		String s1 ="ABC";//immutable object
+		StringBuffer sb = new StringBuffer(s1); //mutatble - reverse.append
+		s1 = sb.toString();//immutbale
+		StringBuilder sbc = new StringBuilder(s1);
+		
+		/**
+		 * class -- final
+		 * make private final -- variables
+		 * make constructor as private
+		 * remove setters -- keep only getters
+		 * Make sure there is no mutable field in a class
+		 * if present you should retun a copy from it's getter
+		 * final Emp e1 = new Emp();
+		 */
+		
+		
 		//Runtime -- Process -- Inputstream -- InputStreamReader 
 		//-- Bufferreader -- readline
 		
@@ -67,17 +92,17 @@ public class TestEmployeeCrud {
 			
 		
 		
-		Employee e0 = new Employee(10,"Emp10");
+		/*Employee e0 = new Employee(10,"Emp10");
 		Employee e1 = new Employee(11,"Emp11");
 		Employee e2 = new Employee(12,"Emp12");
 		Employee e3 = new Employee(13,"Emp13");
-		
-		service.addEntity(e0);
+		*/
+		/*service.addEntity(e0);
 		service.addEntity(e1);
 		service.addEntity(e2);
 		service.addEntity(e3);
 		
-	/*	System.out.println("Get All EMployeesss..");
+		System.out.println("Get All EMployeesss..");
 		System.out.println(service.getAllEntities());
 	*/	
 		/*System.out.println("Get whose id is 12");
@@ -291,7 +316,7 @@ interface MyObj {
 	//just to have product and emp object under same umbrella
 }
 
-class Employee implements MyObj{
+final class Employee implements MyObj{
 	int empId;
 	String empName;
 	public Employee(int empId, String empName) {
@@ -303,6 +328,20 @@ class Employee implements MyObj{
 	public String toString() {
 		return "\n Employee [empId=" + empId + ", empName=" + empName + "]";
 	}
+	public int getEmpId() {
+		return empId;
+	}
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+	
+	
 	
 	
 	
