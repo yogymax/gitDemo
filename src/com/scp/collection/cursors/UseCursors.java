@@ -11,7 +11,6 @@ import java.util.ListIterator;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.Vector;
-import java.util.function.Consumer;
 
 public class UseCursors {
 	
@@ -121,7 +120,7 @@ public class UseCursors {
 		
 		
 		System.out.println("not mandatory right now...J8 -- Lambda -- function interfaces");
-		lappyVector.forEach(System.out::println);
+		/*lappyVector.forEach(System.out::println);
 		lappyVector.forEach(item -> System.out.println(item));
 		lappyVector.forEach((p) -> System.out.println(p));
 		lappyVector.forEach(new Consumer<Laptop>() {
@@ -130,7 +129,7 @@ public class UseCursors {
 				System.out.println(t);
 			}
 		});
-		
+		*/
 		
 		
 		System.out.println("Hashmap Iterations");

@@ -1,5 +1,9 @@
 package com.scp.collection.sorting;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -32,7 +36,8 @@ public class TestMapClasses {
 		//hTable.put(null,"e7");
 		
 		
-		Collections.synchronizedMap(hTable);
+		
+		//Collections.synchronizedMap(hTable);
 		
 		//sychronizedhashmap vs hashtable  vs concurrenthashmap
 		//ESYNC   BDS   BDS
