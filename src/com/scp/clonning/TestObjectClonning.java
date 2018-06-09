@@ -23,7 +23,7 @@ public class TestObjectClonning {
  * 		-- Using clone method of an object class by overriding it into domain class
  * 		-- Using Copy Constructor -- constrcutor which accepts same type of parementer as your class name
  * 		-- Using Deserialization
- * 		-- Third party implementation -- using apache commons
+ * 		-- Third party implementation -- using apache commons -- supports deep clonning
  * 				--https://mvnrepository.com/artifact/commons-lang/commons-lang/2.6
  * 				-- Right click on project -- build path -- Configure Build path -- Select Libraries Tab
  * 					-- Add External jar -- point to to the location where you have downloaded.
@@ -39,6 +39,11 @@ public class TestObjectClonning {
  * 
  * 
  * 
+ * 
+ * Copy Constructor -
+ * 			shallow + deep
+ * 
+ * 			
  * 
  * 
  * 
@@ -58,6 +63,12 @@ public class TestObjectClonning {
 		Emp e1= new Emp(10,"emp1",new Address(101010,"Mumbai"));
 		System.out.println("Apache Commons");
 		Emp empCloned = (Emp) SerializationUtils.clone(e1);
+		
+		System.out.println(e1.getEmpAddress()==empCloned.getEmpAddress());//false
+		
+		
+		
+		
 		
 		System.out.println("------------Using deserizalization------------------");
 		//Serialize -- OOS (FOS)  FOS(file) == Writeobject
@@ -240,10 +251,13 @@ class Address implements Cloneable,Serializable{
 class Parent{
 	public int x;
 	public int y;
+	Address ad;
 	
 	public Parent(Parent p){
 		this.x=p.x;
 		this.y=p.y;
+		//this.ad= new Address(p.ad);  //deep
+		this.ad=p.ad;//shallow
 	}
 
 	public Parent() {
