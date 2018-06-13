@@ -76,16 +76,16 @@ public class LinkedHashSetInternals {
 		Book b21 = new Book(31,"daxang1",6101);
 		Book b31 = new Book(41,"Sasapring2",701);
 
-		Comparator<Book> idCompare = new Comparator<Book>() {
+		/*Comparator<Book> idCompare = new Comparator<Book>() {
 
 			@Override
 			public int compare(Book o1, Book o2) {
 				return o1.getBookId()-o2.getBookId();
 			}
 		};
+*/		
 		
-		
-		TreeSet<Book> treeSet1 = new TreeSet<>(idCompare);
+		TreeSet<Book> treeSet1 = new TreeSet<>();
 		
 		
 		System.out.println("using Linkedhashset");

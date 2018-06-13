@@ -294,7 +294,7 @@ interface AppQueries{
 	String insert_product ="";
 	
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Product p = new Product(10,"pqr",123.1);
 		//String insertQuery = "INSERT INTO PRODUCTS VALUES(";
 		//String finalQuery =insertQuery+p.getProductId()+",'" +p.getProductName()+"',"+p.getProductPrice()+")"; 
@@ -306,7 +306,7 @@ interface AppQueries{
 		System.out.println(updateQuery);
 		
 	}
-	
+	*/
 	
 	
 	/**

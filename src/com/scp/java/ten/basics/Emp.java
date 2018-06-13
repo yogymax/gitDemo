@@ -19,6 +19,15 @@ public class Emp implements Serializable {
 	transient int empSalary;
 	String empAddress;
 
+	public static void staticMethod(){
+		System.out.println("inside static method");
+	}
+	
+	
+	public void instanceMethod(){
+		System.out.println("inside instance method");
+	}
+	
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		Emp e1 = new Emp(10,"Abcd",12121);
 		Emp e2 = new Emp(12,"AAAA",11111);
