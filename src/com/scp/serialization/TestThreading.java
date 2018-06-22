@@ -1,5 +1,28 @@
 		package com.scp.serialization;
 
+		/**
+		 * 
+		 * yeild method -- 
+		 * 			t1 n t2 
+		 * 			t1 chya context me t2.yield() kel
+		 * 			t2 pause kara -- and scheduler same or higher priority aslelaya thread 
+		 * 			cpu assign kara -- konta cpu -- jyvar t2 execute hot hota
+		 * 			This is not gurrentted one --
+		 * 
+		 *  t1' context
+		 *  t2.join
+		 *   
+		 * join -- 
+		 *        t2 will complete first and den t1 will join
+		 *        This is gurreneted once t2 gets the cpu			
+		 * yeild --  
+		 * 		t2 will pause the execution and will give chance to same or higher priority thread 
+		 * 		from thread scheduler (Runnable state)
+		 * 		not gurrented it's os system decision
+		 * 		
+		 * 
+		 * 
+		 */
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -23,9 +46,80 @@ import java.util.concurrent.TimeUnit;
 					ArrayList<Integer> nums = new ArrayList<>();
 					KillThreadDemo t1 = new KillThreadDemo("t1");
 					KillThreadDemo t2= new KillThreadDemo("t2");
-					t1.start();
-					t2.start();
+					Thread t = new Thread(t1);
+					t.setDaemon(true);
+					
+					
+					//wait --   t3.notify
+					//sleep =  s2
+					
+					/****
+					 * t1  --l1
+					 * t3  --l2
+					 * t4 --l2
+					 * t5 --l3
+					 * t6--l4
+					 * 
+					 * t1 t2 =5 
+					 * t2--cpu
+					 * t1 -- 10
+					 * 
+					 *  t1 t2 =10 | 5
+					 * 
+					 * s1
+					 * s2
+					 * wait() wait(ms) wait(ms,ns) interrupt() -- runnable
+					 * waiting -- t1,t3,t5,s2
+					 * 
+					 * 
+					 */
+					
+					
+					
+					
+					
+					//Waiting state --
+						//t1 t2  // notify notifyall or timeoutintervale or interrupt --  -- runnable state
+						//s1  -- timeout or timeinterval expire -- awake -- runnable state
+					
+				/*	t1.start();
+					t2.start(); //3
+					t1.yield();
 					t1.join();
+				*/	/**
+					 * Consider  I have t1 and t2 two threads exeuctuting parrellally
+					 * if in t1's context i have written t2.join()
+					 * then it's gurrented when t2 gets cpu it will completed it's execution 
+					 * before t1
+					 */
+					
+					
+					
+				//	t1.join();
+					
+					for(int i=0;i<100;i++){
+						System.out.println("i" +i);
+					}
+					
+					
+					KillThreadDemo k1 = new KillThreadDemo("k");
+					
+					
+					//ThreadGroup tg = new ThreadGroup("Parent");
+					//java.util.concurrent -- 1.5
+					
+					//demaon thread
+					/**					
+					 * 
+					 * Demean thread is a thread which works at background
+					 * 			for examples -- gc
+					 * 
+					 */
+						
+					
+					
+					
+					
 					
 					System.out.println("Completed Thread name  -- "+Thread.currentThread().getName());
 /*					Producer p1 = new Producer(nums,1,"p1");
@@ -117,7 +211,7 @@ import java.util.concurrent.TimeUnit;
 		
 		
 		
-		class KillThreadDemo extends Thread{ 
+		class KillThreadDemo implements Runnable{ 
 			volatile boolean flag=true;
 			volatile int count =0;
 			public void killThread(){
@@ -125,9 +219,12 @@ import java.util.concurrent.TimeUnit;
 				System.out.println("Killing --" + Thread.currentThread().getName());
 			}
 			public KillThreadDemo(String name) {
-				super(name);
+				//super(name);
 			}
 			public void run(){
+				System.out.println(Thread.currentThread().getName() +" -- Running --");
+				
+				/*
 					while(flag ){
 						System.out.println("Count value -- "+count);
 						try {
@@ -149,7 +246,7 @@ import java.util.concurrent.TimeUnit;
 						System.out.println(Thread.currentThread().getName() +" -- Running --"+ThreadLocalRandom.current().nextInt());
 					}
 					System.out.println("Terminating the thread" +Thread.currentThread().getName());
-			}
+			*/}
 		}
 		
 		

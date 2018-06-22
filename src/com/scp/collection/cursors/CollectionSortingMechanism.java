@@ -82,7 +82,7 @@ class CarPriceSort implements Comparator<Car>{
 	
 }
 
-class CarNameSort implements Comparator<Car>{
+/*class CarNameSort implements Comparator<Car>{
 
 	@Override
 	public int compare(Car o1, Car o2) {
@@ -90,7 +90,7 @@ class CarNameSort implements Comparator<Car>{
 	}
 	
 }
-
+*/
 /**
  *
  * To sort user defined objs you have two imp interfaces those are

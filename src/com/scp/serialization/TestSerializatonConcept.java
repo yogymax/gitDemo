@@ -8,30 +8,60 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 		
+/**
+ *  Serialization Keyword chart ---
+ *  Serialization vs deserialization
+ *  WriteObject vs ReadObject -- when you will override and why private--thn 
+ *  how it's overriden as you are narrow down the scope
+ *  Serialization inheritance scenarios
+ *  transient and volatile keyword
+ * 
+ * 
+ * 
+ * 
+ * 
+ *
+ */
+
+
 		public class TestSerializatonConcept {
 		
 			public static void main(String[] args) throws IOException, ClassNotFoundException {
-			
+				
+				//Student st1 = new Student(411046); //id =10 , clgID =1111 pinc411046
+				//final id
+				//static clgid
+				//transient pic
+				//10 | 1111| 0
+				
 				Company infy1 = new Company(1021, "Pune",10000);
-				File file = new File("C:\\Users\\Yogesh\\Desktop\\Notes\\Serialization\\test.txt");
+				File file = new File("C:\\Users\\Yogesh\\Desktop\\Notes\\Serialization\\stud.txt");
 				
-				FileOutputStream fos = new FileOutputStream(file);
+				
+				
+				/*FileOutputStream fos = new FileOutputStream(file);
 				ObjectOutputStream oos = new ObjectOutputStream(fos);
-				oos.writeObject(infy1);
+				oos.writeObject(st1);
 				oos.close();
-				
+				*/
 				System.out.println("Serialization Completed");
 				FileInputStream fis = new FileInputStream(file);
 				ObjectInputStream ois = new ObjectInputStream(fis);
-				Company infy2 = (Company)ois.readObject();
+				//Company infy2 = (Company)ois.readObject();
+				TestSerialVersionUID deStud = (TestSerialVersionUID)ois.readObject();
 				ois.close();
 				
 				System.out.println("DeSerialization Completed");
 				
-				System.out.println(infy1==infy2); // false
+				//System.out.println("Se -- " + st1);
+				System.out.println("De -- " +deStud);
 				
-				System.out.println("Se "+infy1);
-				System.out.println("DSE "+infy2);
+				//System.out.println(infy1==infy2); // false
+				
+				
+				
+				//System.out.println("Se "+infy1);
+				//System.out.println("DSE "+infy2);
 				
 				
 				
@@ -40,10 +70,36 @@ import java.io.Serializable;
 			
 		}
 
+		
+		
+		class Student implements Serializable{
+			final int id;
+			static int collageId;
+			transient int pincode;
+			
+			public Student(int pincode) {
+				super();
+				this.pincode = pincode;
+				collageId=11111;
+				this.id=10;
+			}
+
+			@Override
+			public String toString() {
+				return "Student [id=" + id + ", pincode=" + pincode + ", Cid=" + collageId + "]";
+			}
+			
+			
+			
+			
+		}
+		
+		
+		
+		
+		
 		class Company implements Serializable{
-			/**
-			 * 
-			 */
+
 			private static final long serialVersionUID = 1L;
 			int headCount;
 			String address;
