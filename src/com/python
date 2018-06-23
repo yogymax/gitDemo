@@ -1,0 +1,54 @@
+from builtins import type
+
+
+class Stud:
+
+    scount=0
+    def __init__(self,id,name,marks):
+        self.sid = id
+        self.sname = name
+        self.smarks = marks
+        Stud.scount += Stud.scount
+
+    def __init__(self,id,name,marks,add):
+        self.sid = id
+        self.sname = name
+        self.smarks = marks
+        self.sAddress = add
+        Stud.scount += Stud.scount
+
+
+    def showstudentinfo(self):
+        print('#############################')
+        print('Student Name', self.sname)
+        print('Student Id',self.sid)
+        print('Student Marks',self.smarks)
+
+id = input('Enter Student id')
+marks = int(input('Enter Student marks'))
+name = (input('Enter Student name'))
+
+print('U entered -- ' , id  , '--',  name , '--' , marks)
+st1 = Stud(id,name,marks)
+
+
+
+id = int(input('Enter Student id'))
+marks = int(input('Enter Student marks'))
+name = input('Enter Student name')
+
+print('U entered -- ' , id  , '--',  name , '--' , marks)
+st2 = Stud(id,name,marks)
+
+print('Student one info')
+st1.showstudentinfo()
+
+print('Student two info')
+st2.showstudentinfo()
+
+'''
+st1 = Stud(10,'Amit',80)
+st2 = Stud(20,'Sumit',90)
+st1.showstudentinfo()
+st2.showstudentinfo()
+'''
