@@ -1,0 +1,102 @@
+https://rishabh.io/misc/angular-4-project-structure.html
+
+		steps
+		-- Download and install node (make sure you have stable version)
+			https://nodejs.org/en/download/
+			>node -v  // this will print the node version installed on your machine
+			>npm  -v // this will print the npm version installed on your machine
+	
+			Purpose 
+				node -- it's a execution engine for javascript file
+				npm -- node package manager --to install required libs
+		--Download and install Microsoft Visual Studio
+			https://code.visualstudio.com/
+		 Purpose -- This is the IDE to write the code in structured way
+		
+		-- install typecript libs	
+			>npm install -g typescript@latest
+			>tsc -v  //it will print typecript version
+			
+		Multiple ways to start with Angular Project
+		1.Manually -- avoid this
+		2.git clone
+			steps :
+				1. Install git and perform following steps
+					--download git and install it 
+						https://git-scm.com/download/win
+					first of all navigate to required folder
+					>git clone https://github.com/angular/quickstart.git
+					>npm install  // it will check package.json file and download required dependecies to the local node-modules folder
+					>npm start   // it executes the angular project on lite server
+					
+					
+					/*
+					
+					tsc -p src/ -w   -- this will compile all src folder .ts files and creates and .js files
+									tsc -- typecript compiler
+									-w -- watch mode  -- as and when there is change in source code(.ts) then it will		
+														compile .ts file and creates .js files
+														and node enginer -- lite-server will executes
+														js files.
+					
+					
+					*/
+					
+					
+					
+					
+					
+					
+		3.Command line -- Angular CLI
+			>npm install -g angular-cli@latest
+			>ng new angular-basics
+			>cd angular-basics
+			>ng serve
+		
+	
+				
+now start with IDE
+	 navigate to project folder make sure your at package.json location
+	 set environment variable
+	Copy this path C:\Program Files\Microsoft VS Code\bin
+	and add it into path environmentvaribales
+	goto control panel -- top right corner search of env
+	-- select System level -- click on environmentvaribales
+	and edit path variable and add specified path C:\Program Files\Microsoft VS Code\bin
+	
+	open fresh command prompt -- to  project folder make sure your at package.json location
+	and type >code
+	
+	this will import the project in VScode
+	
+	
+	x.ts
+	tsc x.ts -- x.js
+	node--- lite server
+				
+	 -- Prepare your system
+			--node
+			--vs code
+			--git
+			--typescript
+			--cli
+	 -- set up angular apps by both ways
+			--git
+			--cli
+	 --setup code variable
+	 -- Read project folder structure from https://www.tutorialspoint.com/angular4/angular4_project_setup.htm
+	 -- Read Type script https://www.typescriptlang.org/docs/handbook/basic-types.html
+	 
+	 
+	 
+	 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
