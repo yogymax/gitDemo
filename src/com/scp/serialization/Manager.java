@@ -4,8 +4,15 @@ import java.util.concurrent.CountDownLatch;
 
 public class Manager {
 	
+	/**
+	 * Countdown latch -- CountDownLatch in Java Concurrency is a type of synchronizer which allows one Thread to wait for one or more Threads before it starts processing.
+	 * 
+	 * @param args
+	 * @throws InterruptedException
+	 */
+	
+	
 	public static void main(String[] args) throws InterruptedException {
-		
 		
 		CountDownLatch countDown = new CountDownLatch(2);
 		JavaDev javaT1 = new JavaDev(countDown);
