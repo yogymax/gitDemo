@@ -1,0 +1,97 @@
+
+num = int(input("no of times you want to iterate"))
+'''
+line no 2 -- will take input from user and convert that input in to integer
+
+'''
+
+
+for item in range(1,num): #it will iterate the loop till the time user has specified
+    x = int(input(str(item)+'.Enter No --'))#-will take input from user
+    while x>0:# check user entered value -- if(greater than zero) -- even else odd -- 
+        if x%2 ==0 :
+            print('Even no',x)
+        else :
+            print('Odd num',x)
+        break
+    else :
+        print('Exit the loop as number is zero or negative',x)
+        break
+
+
+
+
+
+#for i in range(1,11):
+#   print(i)
+
+
+
+#str = input("Enter your name")
+#str = [1,2,3,'A','B',10.0,'xyz']
+#for item in str:
+ #   print(item)
+
+
+
+
+
+
+
+
+
+
+
+'''
+for item in range(0,10):
+    num = int(input(str(item)+'.Enter no'))
+    if num<=0:
+        print('you entered invalid no which is less than or equal to zero',num)
+    elif num%2 == 0 :
+       print('Even no -- ',num)
+    else :
+        print('Odd No -- ', num)
+
+
+
+'''
+
+
+'''
+
+Looping types
+
+		1. Selective -- only one will get executed at time out of
+						multiple conditions
+					if..else  -- if we have limitied 2-3 conditions then you shud go for if else
+							if..else -- every condition will be checked and satified will be executed
+									this is time consuming task -- will affect application performnace
+							
+					switch  -- 
+						Multiple if.else conditions should be replaced by Switch conditions
+						Jump ---
+					
+		2. Transfer
+					-- break -- Exit the current loop
+		
+			-- continue -- skip the current iteration
+					
+					tya interation madhe tyacha khalcha code  execute hot nah
+					
+					
+		3. Iterative
+					-- for loop -- if you are aware about the interations
+					--while -- if you dont know the no
+							of iterations in advance then should	
+							go for while loop
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+'''
