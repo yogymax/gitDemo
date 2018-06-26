@@ -1,0 +1,96 @@
+
+def testifcondition():
+    age = int(input('Enter your age'))
+    if age<=0 :
+        print('Invalid age')
+    elif age<=20:
+        print('Younger')
+    elif age<=40:
+        print('older')
+    else :
+        print('too old....!')
+
+num = int(input('No of times you want to ask..!'))
+for item in range(1,num):
+    while item>0 :
+        print('Steps' +str(item))
+        testifcondition()
+    else :
+        print('entered minus value...')
+
+'''
+
+a = int(input('No of times you want to ask..!'))
+while a>0 :
+    print('Steps' +str(a))
+    testifcondition()
+    a-=1
+else :
+    print('entered minus value...')
+
+'''
+
+
+
+'''
+
+def executebusinessmethod():
+    print("worked...")
+
+
+a =12
+
+while a==10:
+      executebusinessmethod()
+      a+=1
+    
+
+condition=True
+while condition:
+    executebusinessmethod()
+    condition=False
+
+
+
+age = int(input('Enter your age'))
+while age>=0:
+    pass
+else:
+    pass
+
+'''
+
+'''
+def getpersonname(age):
+      x = {
+            10 : "ABC",
+            20 : "PQR",
+            30 : "XYZ",
+            10: "AAA"
+      }
+
+      print(x)
+      return x.get(age,"Invalid Age...! No person Found...!")
+
+
+age = 10
+name = getpersonname(age)
+print("Person whose age is "+str(age)+" and name is --  ",name)
+
+'''
+
+
+
+'''
+num = int(input('enter the range'))#45
+x=1
+temp=1
+while temp < num:
+      temp=x*3
+      x=x+1
+      print(temp)
+'''
+
+#for item in range(1,num):
+ #   if item%3 ==0 :
+  #      print(item)
