@@ -1,0 +1,92 @@
+		package com.scp.serialization;
+
+import java.util.concurrent.Exchanger;
+		
+		public class ExchangeDemo {
+			
+				public static void main(String[] args) {
+					
+					Exchanger exchanger = new Exchanger();
+					MyThread punet = new MyThread(exchanger, "Pune");
+					MyThread mumbait = new MyThread(exchanger, "Mumbai");
+					
+					Thread t1 = new Thread(punet,"T1");
+					Thread t2 = new Thread(mumbait,"T2");
+					
+					t1.start();
+					t2.start();
+
+					/**
+					 * 
+					 * Types of Excuters
+					 * cachedTheadPool -- unbounded/create new thread if task is assigned no idle thread/max idle time is one minute
+					 * singleThreadPool -- at a time max one thread will be there-- will be grnted execution seq
+					 * FixedThread -- bounded -- whenever required create new one if no one is idle -- but limit is given in constructor
+					 * ScheduledThread -- Bounded -- (CPu intensive task-- cpu consuming tasks)
+					 * newSingleThreadScheduleExecutor -- per thread 
+					 * 
+					 */
+					
+					
+					
+					
+					//7.20   -- 10SEC
+					
+					
+					
+					//cachedthreadpool --  Unbounded -- 
+										/*		Step1 -- assign new task -- check thread pool for idle thread -- if(idle)
+																																									assign that task to that thread
+																																									else
+																																										create new thread
+																								nOTE -- MAX IDEL TIME IS FOR ONE MINUTE FOR NAY THREAD AFTER THAT
+																								IT KILL THAT THREAD
+					*/
+					
+				}
+		
+		}
+		
+		
+		
+		
+		class MyThread implements Runnable{
+			Exchanger exchanger = null;
+			String address =null;
+			
+			public MyThread(Exchanger exchanger, String address) {
+				super();
+				this.exchanger = exchanger;
+				this.address = address;
+			}
+
+			@Override
+			public void run() {
+				System.out.println(address +" (before Exchange)  is the current Address for " +Thread.currentThread().getName());
+				
+				 String previous = this.address;
+		          try {
+					this.address = (String) this.exchanger.exchange(this.address);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		          
+		      	System.out.println(address +"(After Exchange)  is the current Address for " +Thread.currentThread().getName());
+			};
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
